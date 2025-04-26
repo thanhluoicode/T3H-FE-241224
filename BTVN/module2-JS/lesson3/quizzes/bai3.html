@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let mang = [2, 3, 5, 6, 9, 10], sum = 0, min = mang[0];
+
+    console.log('Các số chẵn trong mảng là:');
+    for (let i = 0; i < mang.length; i++) {
+      if (mang[i] % 2 == 0) {
+        console.log(mang[i]);
+      }
+    }
+
+    for (let i = 0; i < mang.length; i++) {
+      sum = sum + mang[i];
+    }
+    console.log('Tổng các phần tử trong mảng là: ' + sum);
+
+    for (let i = 1; i < mang.length; i++) {
+      if(min > mang[i]) {
+        min = mang[i];
+      }
+    }
+    console.log('Phần tử nhỏ nhất trong mảng là: ' + min);
+  </script>
+</body>
+</html>
