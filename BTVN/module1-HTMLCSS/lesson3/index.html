@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson3</title>
+    <style>
+      h1 {
+        color: red;
+      }
+      a {
+        text-decoration: none;
+      }
+      .menu-bai3 ul {
+        display: flex;
+        background-color: #333333;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .menu-bai3 li {
+        width: 140px;
+        text-align: center;
+        height: 50px;
+        display: flex;
+        align-items: center;
+      }
+
+      .menu-bai3 a {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+        font-family: sans-serif;
+        margin-left: 20px;
+      }
+      .menu-bai3 a:hover {
+        background-color: silver;
+        color: yellow;
+        border-radius: 3px;
+      }
+
+      .contact-form input {
+        width: 310px;
+        height: 40px;
+        border: 1px solid silver;
+        border-radius: 5px;
+      }
+      .contact-form textarea {
+        width: 310px;
+        height: 100px;
+        border: 1px solid silver;
+        border-radius: 5px;
+      }
+      .contact-form button {
+        width: 70px;
+        height: 40px;
+        background-color: green;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 25px;
+      }
+
+      .contact-form label {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body style="box-sizing: border-box">
+    <h1>Bài tập 1</h1>
+    <div>
+      <div
+        style="
+          width: 620px;
+          padding: 10px;
+          border: 1px solid silver;
+          border-radius: 3px;
+        "
+      >
+        <h2>Tiêu đề bài viết Blog</h2>
+        <div style="border: 1px solid silver; width: 620px; height: 420px">
+          <div
+            style="
+              background-color: blueviolet;
+              width: 600px;
+              height: 400px;
+              margin-left: 10px;
+              margin-top: 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <p>600 X 400</p>
+          </div>
+        </div>
+        <p>
+          Đây là nội dung của bài viết blog. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+
+    <h1>Bài tập 2</h1>
+    <div style="border: 1px solid silver; width: 320px">
+      <div style="width: 300px; margin: 10px">
+        <div style="border-bottom: 1px solid silver; width: 300px">
+          <div
+            style="
+              width: 300px;
+              height: 300px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: antiquewhite;
+              margin-bottom: 20px;
+            "
+          >
+            <p>300 x 300</p>
+          </div>
+        </div>
+        <h3>Tên Sản Phẩm</h3>
+        <p>Giá: 500,000 VND</p>
+        <button
+          style="
+            padding: 10px;
+            width: 110px;
+            font-weight: bold;
+            color: aliceblue;
+            background-color: green;
+            border: none;
+            border-radius: 3px;
+          "
+        >
+          Mua Ngay
+        </button>
+      </div>
+    </div>
+
+    <h1>Bài tập 3</h1>
+    <nav class="menu-bai3">
+      <ul>
+        <li><a href="https://t3h.com.vn/" target="_blank">Trang chủ</a></li>
+        <li>
+          <a href="https://t3h.com.vn/san-pham-sinh-vien" target="_blank"
+            >Giới thiệu</a
+          >
+        </li>
+        <li>
+          <a href="https://t3h.com.vn/lich-khai-giang" target="_blank"
+            >Dịch vụ</a
+          >
+        </li>
+        <li><a href="hhttps://t3h.com.vn/blog" target="_blank">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <h1>Bài tập 4</h1>
+    <footer
+      style="
+        text-align: center;
+        background-color: #333333;
+        padding: 20px 0 20px 0;
+        color: white;
+      "
+    >
+      <p style="margin: 0">Liên Hệ: info@example.com</p>
+      <p style="margin: 0">
+        <a style="margin: 0 5px 0 5px; color: white" href="#">Facebook</a> |
+        <a style="margin: 0 5px 0 5px; color: white" href="#">Twitter</a> |
+        <a style="margin: 0 5px 0 5px; color: white" href="#">Instagram</a>
+      </p>
+    </footer>
+
+    <h1>Bài tập 5</h1>
+    <div
+      style="
+        border: 1px solid silver;
+        width: 620px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+      "
+    >
+      <h2>Tiêu đề bài viết</h2>
+      <p>Nội dung bài viết...</p>
+    </div>
+    <div
+      style="
+        border: 1px solid silver;
+        width: 620px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+      "
+    >
+      <h2>Tiêu đề bài viết</h2>
+      <p>Nội dung bài viết...</p>
+    </div>
+    <div
+      style="
+        border: 1px solid silver;
+        width: 620px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+      "
+    >
+      <h2>Tiêu đề bài viết</h2>
+      <p>Nội dung bài viết...</p>
+    </div>
+
+    <h1>Bào tập 6</h1>
+    <div
+      style="
+        width: 300px;
+        height: 210px;
+        border: 1px solid silver;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          background-color: silver;
+          width: 100px;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          margin-top: 20px;
+        "
+      >
+        <p>100 x 100</p>
+      </div>
+      <h3>Nguyễn Văn A</h3>
+      <p style="margin: 0">Web Developer tại Công ty ABC</p>
+    </div>
+
+    <h1>Bài tập 7</h1>
+    <div
+      style="
+        width: 840px;
+        height: 460px;
+        border: 1px solid silver;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+      "
+    >
+      <div display="flex" style="display: flex; margin-left: 50px">
+        <div>
+          <form
+            class="contact-form"
+            style="display: flex; flex-direction: column"
+            action=""
+          >
+            <h2>Liên Hệ Chúng Tôi</h2>
+
+            <label for="name">Tên của bạn</label>
+            <input type="text" id="name" name="name" />
+
+            <label for="email">Email của bạn</label>
+            <input type="email" id="email" name="email" />
+
+            <label for="message">Tin nhắn của bạn</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+
+            <button type="submit">Gửi</button>
+          </form>
+        </div>
+        <div style="margin-left: 30px">
+          <h2>Thông Tin Liên Hệ</h2>
+          <p>Địa chỉ: 123 Đường ABC, Quận 1, TP. Hồ Chí Minh</p>
+          <p>Điện thoại: (84) 123 456 789</p>
+          <p>Email: info@example.com</p>
+        </div>
+      </div>
+    </div>
+
+    <h1>Bài tập 8</h1>
+    <div
+      style="
+        margin: 0;
+        padding: 0;
+        background-color: silver;
+        width: 100%;
+        height: 720px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          background-color: white;
+          width: 300px;
+          height: 200px;
+          text-align: center;
+          margin: 0 auto;
+          padding: 10px 0;
+          border-radius: 5px;
+        "
+      >
+        <h2>Hộp Thoại</h2>
+        <p>Nội dung của hộp thoại...</p>
+        <button
+          style="
+            width: 70px;
+            height: 40px;
+            background-color: green;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 25px;
+          "
+        >
+          Đóng
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

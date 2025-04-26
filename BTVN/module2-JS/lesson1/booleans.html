@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTL1</title>
+</head>
+
+<body>
+  <script>
+    const x = true;
+    const y = true;
+    const z = false;
+
+    console.log(x && y && z);
+    console.log(x && y && !z);
+    console.log((x && y) || z);
+    console.log((x && y) || !z);
+    console.log(x && (y || z));
+    console.log(x && !(y || z));
+    console.log(x && (y || !z));
+    console.log(x && (!y || z));
+
+
+    const name = 'John';
+    const age = 20;
+    const isStudent = true;
+
+    console.log(`Tuoi moi : ${age + 10}`);
+    console.log(`Tuoi : ${age % 3}`);
+    console.log(`Ten moi : ${name + ' Doe'}`);
+    console.log(!isStudent);
+    console.log(`So sanh : ${name == 'BBBB' && age >= 20}`);
+    console.log(`So sanh 2 : ${name != 'John' && isStudent}`);
+    console.log(`So sanh 3 : ${!(age < 10) && isStudent}`);
+
+    const a = 10;
+    const b = 20;
+    const c = 30;
+    const d = 40;
+
+    console.log(a + b + c);
+    console.log(a - b / c);
+    console.log(a - (b * c));
+    console.log(d - (a * b) - c);
+    console.log(a + b + c + d);
+
+
+    const j = true;
+    const k = false;
+    const l = 10;
+
+    console.log(j && k);
+    console.log(j && !k);
+    console.log(j && l == 10);
+    console.log((j && l == 10));
+    console.log(!(j && l == 10));
+    console.log(!(j && l == 40));
+    console.log(j && k && l == 10);
+    console.log(j && !k && l == 10);
+    console.log(j || k || l == 10);
+    console.log((j && k) || l != 10);
+    console.log(!(j && l == 10) || k);
+
+
+    const a1 = 1;
+    const b1 = '2';
+    const c1 = 3;
+    const d1 = '4';
+
+    console.log(b1 + d1);
+    console.log(a1 + b1 + c1 + d1);
+    console.log(a1 - b1 + c1 - d1);
+    console.log(a1 - b1 - c1 + d1);
+    console.log((b1 + d1) - (a1 + c1));
+    console.log((a1 + b1) - (c1 + d1));
+    console.log(a1 * c1 + b1 * d1);
+    console.log(-b1 + d1);
+    console.log(-b1 - d1);
+    console.log(-(b1 + d1));
+
+    const age2 = 25, isMarried = false, isRich = true;
+
+    console.log(age2 > 25 && isMarried && isRich);
+    console.log((age2 <= 25 || isMarried) && isRich);
+    console.log((age2 > 10 || isRich) && isMarried);
+    console.log(!(age2 >= 15 && isMarried) && isRich);
+    console.log(!(age2 <= 20) || !(isMarried && isRich));
+    console.log((age2 > 8 && !isMarried) || isRich);
+    console.log(!(age2 < 8 && !isMarried) || isRich);
+    console.log((age2 == 8 && isMarried) || !isRich);
+
+    let a2 = 11, b2 = '22', c2 = 33;
+
+    console.log(a2 + b2);
+    console.log(a2 - c2);
+    console.log(a2 + b2 + c2);
+    console.log(a2 + c2 + b2);
+    console.log((a2 + b2) % 3);
+    console.log((a2 * b2) > 50);
+    console.log((a2 ** b2) > 100);
+    console.log(a2 - (b2++) == 5);
+    console.log(a2 - (++b2) == 5);
+
+    let isTall1 = true, isMuscle1 = false, isHandsome1 = true;
+
+    console.log(isTall1 && isMuscle1);
+    console.log(!isHandsome1);
+    console.log(!isTall1 || !isMuscle1);
+    console.log(isTall1 || !(isMuscle1 && isHandsome1));
+    console.log(isMuscle1 && !(isTall1 || isHandsome1));
+  </script>
+</body>
+
+</html>

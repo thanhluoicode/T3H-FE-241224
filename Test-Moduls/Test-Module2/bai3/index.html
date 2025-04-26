@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách Users</title>
+  <style>
+    @font-face {
+      font-family: 'SVN Gotham';
+      src: url('./fonts/SVN-Gotham\ Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'SVN Gotham', sans-serif;
+    }
+
+    .container {
+      width: 554px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #323232;
+      margin-bottom: 20px;
+    }
+
+    .size-content {
+      font-size: 12px;
+      color: #323232;
+    }
+
+    .search-input {
+      margin: 16px 0;
+    }
+
+    #searchKeyword {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #F7F7F9;
+      height: 44px;
+      margin: 4px 0;
+    }
+
+    input:focus {
+      outline: none;
+      border: 2px solid #F7F7F9;
+      box-shadow: 0 0 5px rgba(173, 173, 173, 0.5);
+    }
+
+    .btn-search {
+      width: 100%;
+      height: 44px;
+      background-color: #070707;
+      color: white;
+      text-align: center;
+      line-height: 44px;
+      cursor: pointer;
+      margin: 32px 0;
+    }
+
+    #searchResults {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #323232;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>DANH SÁCH USERS</h2>
+    <div class="search-input">
+      <label for="searchKeyword" class="size-content">Nhập từ khóa để tìm kiếm</label><br>
+      <input type="text" id="searchKeyword" placeholder="Tìm theo tên hoặc email">
+    </div>
+    <div class="btn-search">TÌM KIẾM</div>
+    <div id="searchResults" class="size-content"></div>
+  </div>
+  <script src="./users.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchButton = document.querySelector('.btn-search');
+      const searchInput = document.getElementById('searchKeyword');
+      const resultDiv = document.getElementById('searchResults');
+
+      searchButton.addEventListener('click', () => {
+        const keyword = searchInput.value.trim();
+        const filteredUsers = searchUsers(keyword);
+
+        if (filteredUsers.length === 0) {
+          resultDiv.innerHTML = "Không tìm thấy user nào khớp với keyword";
+        } else {
+          resultDiv.innerHTML = filteredUsers.map(u =>
+            `ID: ${u.id}, Họ và tên: ${u.first_name} ${u.last_name}, Email: ${u.email}`
+          ).join('<br>');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

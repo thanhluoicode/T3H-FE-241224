@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạo tài khoản</title>
+  <style>
+    @font-face {
+      font-family: 'SVN Gotham';
+      src: url('./fonts/SVN-Gotham\ Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'SVN Gotham', sans-serif;
+    }
+
+    .container-login {
+      width: 554px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      color: #323232;
+      margin: 20px 0;
+    }
+
+    .sao {
+      display: inline;
+      color: #E44643;
+    }
+
+    .size-content {
+      font-size: 12px;
+      color: #323232;
+    }
+
+    .color-content {
+      color: #656565;
+    }
+
+    .email-input,
+    .password-input,
+    .firstName-input,
+    .lastName-input {
+      margin: 16px 0;
+    }
+
+    #loginEmail,
+    #loginPassword,
+    #firstName,
+    #lastName {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #F7F7F9;
+      height: 44px;
+      margin: 4px 0;
+    }
+
+    input:focus {
+      outline: none;
+      border: 2px solid #F7F7F9;
+      box-shadow: 0 0 5px rgba(173, 173, 173, 0.5);
+    }
+
+    .btn-login,
+    .btn-creat-account {
+      width: 100%;
+      height: 44px;
+      background-color: #070707;
+      color: white;
+      text-align: center;
+      line-height: 44px;
+      cursor: pointer;
+      margin: 32px 0;
+    }
+
+    .btn-creat-account {
+      background-color: #ffffff;
+      color: #656565;
+      border: 1px solid #656565;
+      font-size: 12px;
+    }
+
+    .btn-creat-account:hover {
+      background-color: #DADADA;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-login">
+    <div class="content-login">
+      <h2>TẠO TÀI KHOẢN</h2>
+      <p class="size-content color-content">Hãy đăng ký ngay để tích lũy điểm thành viên và nhận được những ưu đãi tốt
+        hơn!</p>
+    </div>
+    <div class="firstName-input">
+      <label for="firstName" class="size-content">Tên của bạn <p class="sao">*</p></label><br> <!-- Sửa fisrtName -->
+      <input type="text" id="firstName">
+    </div>
+    <div class="lastName-input">
+      <label for="lastName" class="size-content">Họ của bạn <p class="sao">*</p></label><br>
+      <input type="text" id="lastName">
+    </div>
+    <div class="email-input">
+      <label for="loginEmail" class="size-content">Email hoặc số điện thoại <p class="sao">*</p></label><br>
+      <input type="email" id="loginEmail">
+    </div>
+    <div class="password-input">
+      <label for="loginPassword" class="size-content">Mật khẩu <p class="sao">*</p></label><br>
+      <input type="password" id="loginPassword">
+    </div>
+    <div class="btn-creat-account">TẠO TÀI KHOẢN</div>
+  </div>
+  <script src="./users.js"></script>
+</body>
+
+</html>

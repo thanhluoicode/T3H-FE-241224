@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mảng không trùng</title>
+</head>
+
+<body>
+  <script>
+
+    function getUniqueElements(A1, A2) {
+      let uniqueElements = [];
+
+      for (let i = 0; i < A1.length; i++) {
+        if (!A2.includes(A1[i])) {
+          uniqueElements.push(A1[i]);
+        }
+      }
+
+      for (let j = 0; j < A2.length; j++) {
+        if (!A1.includes(A2[j])) {
+          uniqueElements.push(A2[j]);
+        }
+      }
+
+      return uniqueElements;
+    }
+
+    const A1 = [1, 2, "a"];
+    const A2 = [1, 3, "b"];
+    console.log(getUniqueElements(A1, A2));
+  </script>
+</body>
+
+</html>

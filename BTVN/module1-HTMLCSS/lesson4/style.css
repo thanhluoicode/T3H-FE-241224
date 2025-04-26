@@ -1,0 +1,140 @@
+.bai1 {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.bai1 h2 {
+  color: white;
+  background-color: #333333;
+  text-align: center;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.column {
+  border: 1px solid #333333;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+.bai2,
+.bai7 {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+.product-card {
+  border: 1px solid #333333;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 #333333;
+}
+
+.bai3 {
+  background-color: #333333;
+}
+.bai3 ul {
+  list-style: none;
+  display: flex;
+  padding: 10px;
+  height: 30px;
+}
+
+.bai3 ul li {
+  flex: 1;
+  text-align: center;
+  line-height: 30px;
+}
+
+.bai3 ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.bai3 ul :hover {
+  background-color: rgb(129, 129, 129);
+}
+
+.bai4 {
+  width: 300px;
+  height: auto;
+  background-color: antiquewhite;
+  padding: 20px;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  flex: 3;
+  line-height: 30px;
+  text-align: right;
+}
+.form-group input {
+  flex: 7;
+}
+.bai4 button {
+  width: 100%;
+  padding: 10px;
+  background-color: forestgreen;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.bai5 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #333333;
+  margin: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.bai6,
+.bai8 {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header,
+footer {
+  color: white;
+  background-color: #333333;
+  text-align: center;
+  margin: 0;
+  font-size: 24px;
+}
+
+.container,
+.main-container {
+  display: flex;
+  flex: 1;
+}
+.sidebar {
+  width: 20%;
+  background-color: azure;
+}

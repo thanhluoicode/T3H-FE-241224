@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thực hành</title>
+</head>
+
+<body>
+  <script>
+    // 1. Dãy số từ 1 đến 500
+    let dayso = [], i = 1, index = 0;
+    while (i <= 500) {
+      dayso[index] = i;
+      i++;
+      index++;
+    }
+    console.log('Dãy số từ 1 đến 500 là :' + dayso);
+
+    // 2. Dãy số chia hết cho 2 và 3 từ 1 đến 300
+    let dayso2 = [], i2 = 1, index2 = 0;
+    while (i2 <= 300) {
+      if (i2 % 2 == 0 && i2 % 3 == 0) {
+        dayso2[index2] = i2;
+        index2++;
+      }
+      i2++;
+    }
+    console.log('Dãy số chia hết cho 2 và 3 từ 1 đến 300 là :' + dayso2);
+
+    let i3 = -30, sum = 0;
+    while (i3 <= 50) {
+      if (i3 % 2 == 0) {
+        sum = sum + i3;
+      }
+      i3++;
+    }
+    console.log('Tổng các số chẵn từ -30 đến 50 là :' + sum);
+
+    // 4. Giai thừa của n
+    // let n = prompt('Nhập số n :'), giaithua = 1;
+    // while (n > 0) {
+    //   giaithua = giaithua * n;
+    //   n--;
+    // }
+    // console.log('Giai thừa của n là :' + giaithua);
+
+    // 5. Số nhỏ nhất chia hết cho x từ a đến b
+    // let a = prompt('Nhập số a :'), b = prompt('Nhập số b :'), x = prompt('Nhập số x :');
+    // while (a < b) {
+    //   if (a % x == 0) {
+    //     console.log(a);
+    //     break;
+    //   }
+    //   a++;
+    // }
+
+    // 6. Tổng S = 1/1*2 + 1/2*3 + ... + 1/n*(n+1)
+    // let n = prompt('Nhập số n :'), sum2 = 0;
+    // for (let i = 1; i <= n; i++) {
+    //   sum2 += 1 / (i * (i + 1));
+    // }
+    // console.log('Tổng S = 1/1*2 + 1/2*3 + ... + 1/n*(n+1) là :' + sum2);
+
+    // 7. Dãy số chia hết cho n từ 1 đến n
+    // let n2= prompt('Nhập số n :'), dayso3 = [], index3 = 0;
+    // for (let i = 1; i <= n2; i++) {
+    //   if (n2 % i == 0) {
+    //     dayso3[index3] = i;
+    //     index3++;
+    //   };
+    // }
+    // console.log('Dãy số chia hết cho n từ 1 đến n là :' + dayso3);
+
+    // 8. Dãy số nguyên tố đến n
+    // let n3 = prompt('Nhập số n :'), dayso4 = [], index4 = 0;
+    // for (let i = 2; i <= n3; i++) {
+    //   let isPrime = true;
+    //   for (let j = 2; j <= Math.sqrt(i); j++) {
+    //     if (i % j == 0) {
+    //       isPrime = false;
+    //       break;
+    //     }
+    //   }
+    //   if (isPrime) {
+    //     dayso4[index4] = i;
+    //     index4++;
+    //   }
+    // }
+    // console.log('Dãy số nguyên tố từ 1 đến n là :' + dayso4);
+
+    // 9.Thêm 0 vào đầu chuỗi
+    // let s = prompt('Nhập một chuỗi :');
+    // let l = prompt('Nhập một số :');
+    // l = Number(l);
+    // while (s.length < l) {
+    //   s = "0" + s;
+    // }
+    // console.log('Chuỗi sau khi thêm số 0 là: ' + s);
+
+    // 10. UCLN và BCNN của a và b
+    // let m = parseInt(prompt('Nhập số m: '));
+    // let n = parseInt(prompt('Nhập số n:'));
+
+    // if (m > 0 && n > 0) {
+    //   let a = m, b = n;
+    //   while (b !== 0) {
+    //     let temp = b;
+    //     b = a % b;
+    //     a = temp;
+    //   }
+    //   let uc = a;
+    //   let bc = (m * n) / uc;
+    //   console.log('Ước chung lớn nhất', uc);
+    //   console.log('Bội chung nhỏ nhất (LCM):', bc);
+    // } else {
+    //   console.log('Nhập vào số dương !');
+    // }
+
+    // 11. Dự đoán số
+    // let soRandom = Math.floor(Math.random() * 5) + 1;
+    // let count = 5;
+    // let soNhapvao;
+    // for (let i = 1; i <= count; i++) {
+    //   soNhapvao = Number(prompt('Số bạn dự đoán là: '));
+    //   if (soNhapvao === soRandom) {
+    //     alert('Đoán đúng');
+    //     break;
+    //   } else {
+    //     alert('Đoán sai')
+    //   }
+    // }
+
+    // 12. Bảng cửu chương của số n
+    // let n;
+    // do {
+    //   n = Number(prompt('Nhập n'));
+    // } while (n < 2 || n > 10);
+
+    // for (let i = 1; i <= 10; i++) {
+    //   console.log(n + '*' + i + '=' + i * n);
+    // }
+
+    // 13.Vẽ hình vuông
+    // let n = parseInt(prompt("Nhập vào số n (n >= 2): "));
+    // if (n >= 2) {
+    //   let row = '';
+    //   for (let i = 0; i < n; i++) {
+    //     for (let j = 0; j < n; j++) {
+    //       row += '*';
+    //     }
+    //     row += "\n";
+    //   } console.log(row);
+    // } else {
+    //   console.log("Vui lòng nhập n >= 2");
+    // }
+
+    // 14. Vễ hình chữ nhật
+    // let n = parseInt(prompt("Nhập vào số n (n >= 2): "));
+    // let m = parseInt(prompt("Nhập vào số m (m >= 2): "));
+    // if (n >= 2 && m >= 2) {
+    //   let row = '';
+    //   for (let i = 0; i < n; i++) {
+    //     for (let j = 0; j < m; j++) {
+    //       row += '*';
+    //     }
+    //     row += "\n";
+    //   } console.log(row);
+    // } else {
+    //   console.log("Vui lòng nhập n >= 2");
+    // }
+
+    // 15. Vẽ hình tam giác vuông cân
+    // let n = parseInt(prompt("Nhập vào số n (n >= 2): "));
+    // if (n >= 3) {
+    //   for (let i = 1; i <= n; i++) {
+    //     let row = '';
+    //     for (let j = 1; j <= i; j++) {
+    //       row += '*';
+    //     }
+    //     console.log(row);
+    //   }
+    // } else {
+    //   console.log("Vui lòng nhập n >= 2");
+    // }
+
+    // 16. Tính BMI
+    // let w = Number(prompt("Nhập cân nặng (kg): "));
+    // let h = Number(prompt("Nhập chiều cao (m): "));
+    // const BMI = w / (h * h);
+    // console.log(BMI);
+
+    // if (BMI < 18.5) {
+    //   console.log("Nhẹ cân");
+    // } else if (18.5 <= BMI && BMI < 23) {
+    //   console.log("Bình thường");
+    // } else if (23 <= BMI && BMI < 25) {
+    //   console.log("Thừa cân");
+    // } else {
+    //   console.log("Béo phì");
+    // }
+
+    // 17. Nhập số đến khi đúng giá trị được random
+    // const a = Math.floor(Math.random() * 5) + 5;
+    // let n;
+    // do {
+    //   n = Number(prompt("Nhập n"));
+    // } while (n !== a);
+
+  </script>
+</body>
+
+</html>

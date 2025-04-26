@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizz 0</title>
+</head>
+
+<body>
+  <script>
+    // Tổng 1 đến 50
+    let sum = 0;
+    for (let i = 1; i <= 50; i++) {
+      sum = sum + i;
+    }
+    console.log('Tổng 1 đén 50 là :' + sum);
+
+    // Hãy tính tổng các số chẵn từ -10 đến 50
+    for (let i = -10; i <= 50; i += 2) {
+      sum = sum + i;
+    }
+    console.log('Tổng các số chẵn từ -10 đến 50 là :' + sum);
+
+    // Các số chia hết cho 9 từ -100 đến 100
+    let chia9 = [];
+    let index = 0;
+    for (let i = -100; i <= 100; i++) {
+      if (i % 9 == 0) {
+        chia9[index] = i;
+        index++;
+      }
+    }
+    console.log('Các số chia hết cho 9 từ -100 đến 100 là :' + chia9);
+
+    // Dãy số từ 1 đến 200
+    let dayso = [], i = 1, index2 = 0;
+    while (i <= 200) {
+      dayso[index2] = i;
+      i++;
+      index2++;
+    }
+    console.log('Dãy số từ 1 đến 200 là :' + dayso);
+
+    // Thêm 'a' vào chuỗi s cho đến khi đủ độ dài l
+    let s = prompt('Nhập chuỗi s :');
+    let l = prompt('Nhập chuỗi l :');
+    while (s.length <= l) {
+      s = s + 'a';
+    }
+    console.log('Chuỗi s sau khi thêm a là :' + s);
+
+    // Giảm giá trị x tăng giá trị y cho đến khi x > y
+    let x = prompt('Nhập số x :');
+    let y = prompt('Nhập số y :');
+    if (0 <= x && y <= 100) {
+      while (x < y) {
+        console.log(`x = ${x}, y = ${y}`);
+        x++; // Tăng x
+        y--; // Giảm y
+      }
+      console.log(`Dừng lại tại x = ${x}, y = ${y}`);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 1</title>
+    <style>
+      h3 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h3>Bài tập 1</h3>
+      <form action="">
+        <h1>Form Đăng Ký</h1>
+        <label for="fullname">Họ tên:</label>
+        <input type="text" id="fullname" required /><br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" required /><br />
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" required /><br />
+        <label for="">Giới tính:</label>
+        <input type="radio" id="gender" name="gender" value="Nam" required />
+        <label for="gender">Nam</label>
+        <input type="radio" id="gender" name="gender" value="Nữ" required />
+        <label for="gender">Nữ</label><br />
+        <label for="">Sở thích:</label>
+        <input type="checkbox" id="hobby" />
+        <label for="hobby">Đọc sách</label>
+        <input type="checkbox" id="hobby" />
+        <label for="hobby">Du lịch</label><br />
+        <input type="submit" value="Gửi" />
+      </form>
+    </div>
+
+    <div>
+      <h3>Bài tập 2</h3>
+      <h1>Bảng phức tạp</h1>
+      <table border="1">
+        <tr>
+          <th rowspan="2">Môn học</th>
+          <th colspan="2">Kì 1</th>
+          <th colspan="2">Kì 2</th>
+        </tr>
+        <tr>
+          <th>Điểm giữa kì</th>
+          <th>Điểm cuối kì</th>
+          <th>Điểm giữa kì</th>
+          <th>Điểm cuối kì</th>
+        </tr>
+        <tr>
+          <td>Toán</td>
+          <td>8</td>
+          <td>9</td>
+          <td>7</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>Văn</td>
+          <td>7</td>
+          <td>8</td>
+          <td>6</td>
+          <td>9</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <h3>Bài tập 3</h3>
+      <h1>Nhúng video</h1>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/6rvv8bU3pKA?si=q8ik_UL1brwBXnst"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <h1>Bản đồ</h1>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.2674040718384!2d105.79358607476769!3d20.969225389821666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acd8f8d04ca3%3A0x48fd8b58ad67094f!2zTmcuIDg3IMSQLiBZw6puIFjDoSwgWcOqbiBYw6EsIFTDom4gVHJp4buBdSwgVGhhbmggVHLDrCwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1735146059872!5m2!1svi!2s"
+        width="300"
+        height="225"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <h1>Âm thanh</h1>
+      <audio controls>
+        <source src="./audio.m4a" type="audio/mp3" />
+      </audio>
+    </div>
+
+    <div>
+      <h3>Bài tập 4</h3>
+      <h1>Thẻ a</h1>
+      <ul>
+        <li><a href="https://t3h.com.vn/" target="_blank">Trang chủ</a></li>
+        <li>
+          <a href="https://t3h.com.vn/san-pham-sinh-vien" target="_blank"
+            >Giới thiệu</a
+          >
+        </li>
+        <li>
+          <a href="https://t3h.com.vn/lich-khai-giang" target="_blank"
+            >Dịch vụ</a
+          >
+        </li>
+        <li><a href="hhttps://t3h.com.vn/blog" target="_blank">Liên hệ</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Bài tập 5</h3>
+      <h1>Giới thiệu cá nhân</h1>
+      <section>
+        <h2>Ảnh đại diện</h2>
+        <img
+          src="./avt.jpg"
+          alt=""
+          style="border-radius: 50%; width: 100; height: auto"
+        />
+      </section>
+      <section>
+        <h2>Thông tin cá nhân</h2>
+        <p>Họ và tên: Nguyễn Văn Thành</p>
+        <p>Email: thanhnguyen.techdev@gmail.com</p>
+        <p>Địa chỉ: 87 Đ. Yên Xá, Tân Triều, Thanh Trì, Hà Nội</p>
+      </section>
+      <section>
+        <h2>Kinh nghiệm làm việc</h2>
+        <p>Công ty ABC (2018-2222): Vị trí nhân viên kỹ thuật.</p>
+        <p>Công ty XYZ (2222-3333): Vị trí quản lý dự án.</p>
+      </section>
+      <section>
+        <h2>Kỹ năng</h2>
+        <ul>
+          <li>HTML & CSS</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Sở thích</h2>
+        <ul>
+          <li>Đọc sách</li>
+          <li>Du lịch</li>
+          <li>Chơi thể thao</li>
+        </ul>
+      </section>
+    </div>
+
+    <div>
+      <h3>Bài tập 6</h3>
+      <h1>FAQ (Câu Hỏi Thường Gặp)</h1>
+      <dl>
+        <dt>Câu hỏi 1: Làm thế nào để đăng ký?</dt>
+        <dd>
+          Trả lời: Bạn có thể đăng ký bằng cách điền vào mẫu đăng ký trên trang
+          web của chúng tôi.
+        </dd>
+
+        <dt>Câu hỏi 2: Tôi có thể thanh toán bằng cách nào?</dt>
+        <dd>
+          Trả lời: Chúng tôi chấp nhận thanh toán qua thẻ tín dụng, chuyển khoản
+          ngân hàng và ví điện tử.
+        </dd>
+
+        <dt>Câu hỏi 3: Chính sách hoàn tiền như thế nào?</dt>
+        <dd>
+          Trả lời: Chúng tôi có chính sách hoàn tiền trong vòng 30 ngày nếu bạn
+          không hài lòng với sản phẩm.
+        </dd>
+      </dl>
+    </div>
+
+    <div>
+      <h3>Bài tập 7</h3>
+      <h1>Dụ báo thời tiết</h1>
+      <table border="1">
+        <thead>
+          <th>Ngày</th>
+          <th>Nhiệt độ</th>
+          <th>Tình trạng thời tiết</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Thứ Hai</td>
+            <td>30<sup>o</sup>C</td>
+            <td>Nắng</td>
+          </tr>
+          <tr>
+            <td>Thứ Ba</td>
+            <td>28<sup>o</sup>C</td>
+            <td>Mây</td>
+          </tr>
+          <tr>
+            <td>Thứ Tư</td>
+            <td>26<sup>o</sup>C</td>
+            <td>Mưa<a href=""></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

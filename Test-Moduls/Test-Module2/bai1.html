@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+    }
+
+    .todoapp {
+      width: 600px;
+    }
+
+    .tabs {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 10px 0;
+      cursor: pointer;
+      color: #727272;
+    }
+
+    .contain-add-todo {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .todo-input {
+      width: 75%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .add-btn {
+      width: 15%;
+      border-radius: 8px;
+      border: none;
+      background-color: #0084F5;
+      color: white;
+    }
+
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px 0;
+    }
+
+    .form-check-input {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .form-check-label {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .form-check {
+      width: 100%;
+    }
+
+    .contain-del i {
+      font-size: 20px;
+      color: #ff4444;
+      cursor: pointer;
+    }
+
+    .contain-del {
+      display: flex;
+      justify-content: end;
+      width: 10%;
+    }
+
+    .contain-delAll {
+      display: flex;
+      justify-content: end;
+      margin-top: 20px;
+    }
+
+    .delAll-btn {
+      width: 20%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background-color: #ff4444;
+      color: white;
+    }
+
+    .completed .form-check-label {
+      text-decoration: line-through;
+      color: #888;
+    }
+
+    .tab.active {
+      border-bottom: 5px solid #0084F5;
+      color: black;
+      font-weight: 600;
+    }
+
+    #todoList {
+      margin-top: 20px;
+    }
+
+    .todo-item {
+      flex-direction: row-reverse;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="todoapp">
+    <h1>Todo App</h1>
+    <ul class="tabs">
+      <li onclick="filterTasks('all')" class="tab active">All</li>
+      <li onclick="filterTasks('active')" class="tab">Active</li>
+      <li onclick="filterTasks('completed')" class="tab">Completed</li>
+    </ul>
+    <div class="contain-add-todo" id="containAddTodo">
+      <input type="text" placeholder="Add details" class="todo-input">
+      <button class="add-btn" onclick="addTask()">Add</button>
+    </div>
+    <div id="todoList">
+    </div>
+    <div class="contain-delAll" id="containDelAll">
+      <button class="delAll-btn" onclick="clearAllTasks()">Delete all</button>
+    </div>
+  </div>
+
+  <script>
+    let tasks = [];
+    let currentFilter = 'all';
+
+    window.onload = function () {
+      const savedTasks = localStorage.getItem('tasks');
+      if (savedTasks) {
+        tasks = JSON.parse(savedTasks);
+      }
+      renderTasks();
+      filterTasks('all');
+    };
+
+    function addTask() {
+      const input = document.querySelector('.todo-input');
+      const text = input.value.trim();
+      if (text) {
+        const newTask = {
+          id: Date.now(),
+          text: text,
+          completed: false
+        };
+        const index = tasks.length;
+        tasks[index] = newTask;
+        input.value = '';
+        saveTasks();
+        renderTasks();
+      }
+    }
+
+    function toggleTask(id) {
+      for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].id === id) {
+          tasks[i].completed = !tasks[i].completed;
+          break;
+        }
+      }
+      saveTasks();
+      renderTasks();
+    }
+
+    function deleteTask(id) {
+      for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].id === id) {
+          tasks.splice(i, 1);
+          break;
+        }
+      }
+      saveTasks();
+      renderTasks();
+    }
+
+    function clearAllTasks() {
+      for (let i = tasks.length - 1; i >= 0; i--) {
+        if (tasks[i].completed) {
+          tasks.splice(i, 1);
+        }
+      }
+      saveTasks();
+      renderTasks();
+    }
+
+    function filterTasks(filter) {
+      currentFilter = filter;
+      const tabs = document.querySelectorAll('.tab');
+      const containAddTodo = document.getElementById('containAddTodo');
+      const containDelAll = document.getElementById('containDelAll');
+
+      for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+        if ((filter === 'all' && i === 0) ||
+          (filter === 'active' && i === 1) ||
+          (filter === 'completed' && i === 2)) {
+          tabs[i].classList.add('active');
+        }
+      }
+
+      if (filter === 'all' || filter === 'active') {
+        containAddTodo.style.display = 'flex';
+        containDelAll.style.display = 'none';
+      }
+      if (filter === 'completed') {
+        containAddTodo.style.display = 'none';
+        containDelAll.style.display = 'flex';
+      }
+      renderTasks();
+    }
+
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function renderTasks() {
+      const todoList = document.getElementById('todoList');
+      todoList.innerHTML = '';
+
+      let filteredTasks = [];
+      if (currentFilter === 'active') {
+        for (let i = 0; i < tasks.length; i++) {
+          if (!tasks[i].completed) {
+            filteredTasks.push(tasks[i]);
+          }
+        }
+      } else if (currentFilter === 'completed') {
+        for (let i = 0; i < tasks.length; i++) {
+          if (tasks[i].completed) {
+            filteredTasks.push(tasks[i]);
+          }
+        }
+      } else {
+        filteredTasks = tasks;
+      }
+
+      for (let i = 0; i < filteredTasks.length; i++) {
+        const task = filteredTasks[i];
+        const div = document.createElement('div');
+        div.className = 'todo-item';
+
+        const formCheck = document.createElement('div');
+        formCheck.className = 'form-check';
+        if (task.completed) formCheck.classList.add('completed');
+
+        const checkbox = document.createElement('input');
+        checkbox.className = 'form-check-input';
+        checkbox.type = 'checkbox';
+        checkbox.id = `checkbox-${task.id}`;
+        checkbox.checked = task.completed;
+        checkbox.addEventListener('click', function () {
+          toggleTask(task.id);
+        });
+
+        const label = document.createElement('label');
+        label.className = 'form-check-label';
+        label.htmlFor = `checkbox-${task.id}`;
+        label.textContent = task.text;
+
+        formCheck.appendChild(checkbox);
+        formCheck.appendChild(label);
+
+        if (currentFilter === 'completed') {
+          const containDel = document.createElement('div');
+          containDel.className = 'contain-del';
+          const deleteIcon = document.createElement('i');
+          deleteIcon.className = 'fa-solid fa-circle-minus';
+          deleteIcon.onclick = function () {
+            deleteTask(task.id);
+          };
+          containDel.appendChild(deleteIcon);
+          div.appendChild(containDel);
+        }
+
+        div.appendChild(formCheck);
+        todoList.appendChild(div);
+      }
+    }
+
+    document.querySelector('.todo-input').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        addTask();
+      }
+    });
+  </script>
+</body>
+
+</html>
